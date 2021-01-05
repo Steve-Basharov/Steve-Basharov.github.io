@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+<title>Новости на сайте</title>
+{% endblock %}
+{% block content %}
+<h1>Новости</h1>
+{% for el in news %}
+<div class="news">
+ <div class="alert alert-warning">
+     <h2>{{ el.title }} </h2>
+     <h4>{{ el.anons }}</h4>
+     {{ el.full_text }}
+</div>
+</div>
+{% endfor %}
+{% endblock %}

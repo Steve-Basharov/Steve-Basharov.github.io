@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+<title>Заказать проект</title>
+{% endblock %}
+{% block content %}
+<h1>Подать заявку на проект</h1>
+<form class="former" method="POST">
+  {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Telegram</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="tg">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Размер вознаграждения</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" name="cash">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Кратко опишите ваш проект</label>
+        <textarea class="form-control" aria-label="With textarea" name="tex_zad"></textarea>
+    </div>
+    <button type="submit" class="btn btn-warning">Submit</button>
+  </form>
+  {{error}}
+{% endblock %}
